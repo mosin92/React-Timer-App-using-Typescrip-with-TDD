@@ -6,23 +6,43 @@ type Props= {
 export const ControlButtons = (props: Props) => {
     
     const [intervalId, setintervalId] = useState<number>(0);
+    let [play, setplay] = useState<boolean>(true);
+    let [stop, setstop] = useState<boolean>(false);
+    let [reset, setreset] = useState<boolean>(false);
 
     let { settimesecond } = props;
 
-    const playbutton:any = () => {
-     let interval:any= setInterval(() => {
-            settimesecond((previous:number) => previous + 1)
-     }, 1000);
-        setintervalId(interval);
+    const playbutton: any = () => {
+        
+        if (play) {
+            setplay(false);
+            setstop(true);
+            setreset(true);
+            let interval: any = setInterval(() => {
+                settimesecond((previous: number) => previous + 1)
+            }, 1000);
+            setintervalId(interval);
+        }
     }
 
     const stopbutton = () => {
-        clearInterval(intervalId);
+        if (stop) {
+            setplay(true);
+            setstop(false);
+            setreset(true);
+            clearInterval(intervalId);
+
+        }
     }
 
     const resetbutton = () => {
-        clearInterval(intervalId);
-        settimesecond(0);
+        if (reset) {
+            setreset(false);
+            setplay(true);
+            setstop(true);
+            clearInterval(intervalId);
+            settimesecond(0);
+        }
     }
     return (
         <section className="control-container">
