@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.timer-container{
+    display: flex;
+    color: #ccc;
+    letter-spacing: 2px;
+  
+}
+.timer-text {
+    display: flex;
+    color: #ccc;
+    font-size: 5rem;
+}
+.timer-text {
+    margin: 0;
+    font-size: 5rem;
+    letter-spacing: 2px; 
+}
+.timer-container span {
+    font-size: 3rem;
+    position: relative;
+    top: 8px;
+    font-size: 4rem;
+    letter-spacing: 2px;
+}
