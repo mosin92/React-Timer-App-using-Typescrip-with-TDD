@@ -18,6 +18,5 @@ deploy:
   skip_cleanup: true
   domain: long-opinion.surge.sh
   project: ./build/
-
 on: 
   branch: main
